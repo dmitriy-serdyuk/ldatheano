@@ -28,6 +28,8 @@ def main():
     ALPHA = 0.01
     N = 100
     K = 10
+    V = 1000
+    M = 3
     EPS = 0.01
     w = tt.ivector("w")
     beta = tt.fmatrix("beta")
@@ -67,5 +69,20 @@ def main():
     print "Result", res, "phi", phi.get_value()
 
 
+def gibbs():
+    N = 100 # max words
+    K = 10 # topics
+    W = 1000 # vocabulary
+
+    NWKJ = tt.TensorType("float32", broadcastable=(False, False, False), name="NWKJ")
+
+    trng = tt.shared_randomstreams.RandomStreams(1235)
+
+    u = trng.uniform()
+    p = NWKJ
+    print theano.function([], d)()
+
+
 if __name__ == "__main__":
-    main()
+    #main()
+    gibbs()
